@@ -2,14 +2,12 @@ import {
   FETCH_MOVIES_REQUEST,
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILURE,
-  SET_SELECTED_MOVIE,
 } from "./moviesTypes";
 
 const initialState = {
   loading: false,
   movies: [],
   error: "",
-  selectedMovie: 0,
 };
 
 const moviesReducer = (state = initialState, { type, payload }) => {
@@ -33,11 +31,6 @@ const moviesReducer = (state = initialState, { type, payload }) => {
         movies: [],
         error: payload,
       };
-    case SET_SELECTED_MOVIE:
-      return {
-        ...state,
-        selectedMovie: payload
-      }
 
     default:
       return state;

@@ -4,7 +4,7 @@ import { useParams, Outlet } from "react-router";
 import MovieCard from "../components/MovieCard";
 import { fetchMovies } from "../redux/movies/moviesActions";
 
-const Movies = (props) => {
+const Movies = () => {
   const { genreName } = useParams();
 
   const dispatch = useDispatch();
@@ -18,7 +18,6 @@ const Movies = (props) => {
   }
   return (
     <div className="movie-cards">
-      <h3>{props?.source} Movies</h3>
       {movies
         ?.filter((movie) =>
           movie.genres.some((element) => element.toLowerCase() === genreName)

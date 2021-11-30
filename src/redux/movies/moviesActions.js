@@ -2,7 +2,6 @@ import {
   FETCH_MOVIES_REQUEST,
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILURE,
-  SET_SELECTED_MOVIE,
 } from "./moviesTypes";
 import axios from "axios";
 
@@ -18,11 +17,6 @@ export const fetchMoviesSuccess = (users) => ({
 export const fetchMoviesFailure = (error) => ({
   type: FETCH_MOVIES_FAILURE,
   payload: error,
-});
-
-export const setSelectedMovie = (id) => ({
-  type: SET_SELECTED_MOVIE,
-  payload: id,
 });
 
 export const fetchMovies = () => (dispatch) => {

@@ -1,19 +1,16 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Card } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
-import { setSelectedMovie } from "../redux/movies/moviesActions";
 import "../styles/MovieCard.css";
 
 const MovieCard = (props) => {
   const movie = useSelector((state) =>
     state?.movies.movies?.find((entity) => entity?.id === props?.id)
   );
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const handleClick = () => {
-    dispatch(setSelectedMovie(movie?.id));
     navigate(
       `${location.pathname}/${movie?.title?.toLowerCase().replace(/ /g, "_")}`
     );
