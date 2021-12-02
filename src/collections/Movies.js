@@ -20,10 +20,10 @@ const Movies = () => {
     <div className="movie-cards">
       {movies
         ?.filter((movie) =>
-          movie.genres.some((element) => element.toLowerCase() === genreName)
+          movie?.genres?.some((element) => element?.toLowerCase() === genreName)
         )
         ?.map((moviee) => (
-          <MovieCard key={moviee.id} id={moviee?.id} />
+          <MovieCard key={moviee?.id} id={moviee?.id} />
         ))}
       <Outlet />
     </div>

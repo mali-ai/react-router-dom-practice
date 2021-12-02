@@ -23,13 +23,10 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {console.log(movie)}
       <Modal
         show={true}
         size="lg"
-        onHide={() => {
-          navigate(-1);
-        }}
+        onHide={() => navigate(-1)}
         aria-labelledby={movie?.id}
       >
         <Modal.Header closeButton>
