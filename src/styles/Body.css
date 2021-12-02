@@ -1,0 +1,5 @@
+.main-body-component {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
